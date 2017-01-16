@@ -76,8 +76,8 @@ public class Application {
                 // Bus 002 Device 025: ID 1050:0010 Yubico.com Yubikey
                 // Bus 002 Device 026: ID 16c0:0486 Van Ooijen Technische Informatica Teensyduino RawHID
 
-                final short VENDOR_ID  = 0x16c0;
-                final short PRODUCT_ID = 0x0486;
+                final short VENDOR_ID  = 0x1050;
+                final short PRODUCT_ID = 0x0010;
                 HidDevice dev = null;
 
                 if (deviceOpen) {
@@ -113,7 +113,7 @@ public class Application {
                             dev.setInputReportListener(new InputReportListener() {
                                 @Override
                                 public void onInputReport(HidDevice source, byte Id, byte[] data, int len) {
-                                    System.out.printf("onInputReport: id %d len %d data ", Id, len);
+                                    System.out.printf("\tonInputReport: id %d len %d data ", Id, len);
                                     for (int i = 0; i < len; i++)
                                         System.out.printf("%02X ", data[i]);
                                     System.out.println();
