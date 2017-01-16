@@ -73,10 +73,10 @@ public class Application {
 
             while (true) {
 
-                //idVendor           0x16c0 Van Ooijen Technische Informatica
-                //idProduct          0x0486 Teensyduino RawHID
+                // Bus 002 Device 025: ID 1050:0010 Yubico.com Yubikey
+                // Bus 002 Device 026: ID 16c0:0486 Van Ooijen Technische Informatica Teensyduino RawHID
 
-                final short VENDOR_ID = 0x16c0;
+                final short VENDOR_ID  = 0x16c0;
                 final short PRODUCT_ID = 0x0486;
                 HidDevice dev = null;
 
@@ -90,7 +90,7 @@ public class Application {
 
                     if (devInfo == null) {
 
-                        System.out.println("Teensyduino not found");
+                        System.out.printf("hidraw device %x:%x not found\n", VENDOR_ID, PRODUCT_ID);
                         Thread.sleep(1000);
 
                     } else {
