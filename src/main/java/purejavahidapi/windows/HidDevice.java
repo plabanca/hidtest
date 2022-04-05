@@ -147,7 +147,7 @@ public class HidDevice extends purejavahidapi.HidDevice {
 		if (!m_Open)
 			throw new IllegalStateException("device not open");
 		if (m_OutputReportLength == 0)
-			throw new IllegalArgumentException("this device supportst no output reports");
+			throw new IllegalArgumentException("this device does not support output reports");
 		// In Windows writeFile() to HID device data has to be preceded with the report number, regardless 
 		m_OutputReportMemory.write(0, new byte[] { reportID }, 0, 1);
 		m_OutputReportMemory.write(1, data, 0, length);
